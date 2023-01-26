@@ -1,11 +1,16 @@
 import React from 'react'
-import Header from '../../components/header'
+import './style.css'
+import { Header, NavBar, Content } from '../../components'
+import Router from '../../router'
 
 function Main() {
     return ( 
-        <div>
-            <Header/>
-            <h1>Hello World</h1>
+        <div className='main'>
+            <Header/>           
+            <NavBar/>
+            <Content>
+                <Router/>
+            </Content>
         </div>
     )
 }

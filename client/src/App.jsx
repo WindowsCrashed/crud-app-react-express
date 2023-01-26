@@ -1,9 +1,14 @@
 import './App.css'
 import Main from './pages/main'
+import { BrowserRouter } from 'react-router-dom'
 
 function App() {
   return (
-    <Main/> 
+    <div className='App'>
+      <BrowserRouter>
+        <Main/>
+      </BrowserRouter>
+    </div>    
   )
 }
 
