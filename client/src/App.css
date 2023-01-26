@@ -1,0 +1,18 @@
+@font-face {
+  font-family: 'Montserrat-Regular';
+  src: url('./assets/fonts/Montserrat-Regular.ttf');
+}
+
+* {
+  font-family: 'Montserrat-Regular';
+}
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
