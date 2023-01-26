@@ -3,9 +3,9 @@ import './style.css'
 import { Header, NavBar, Content } from '../../components'
 import Router from '../../router'
 
-function Main() {
+function Layout() {
     return ( 
-        <div className='main'>
+        <div className='layout'>
             <Header/>           
             <NavBar/>
             <Content>
@@ -15,4 +15,4 @@ function Main() {
     )
 }
 
-export default Main
+export default Layout

@@ -1,12 +1,12 @@
 import './App.css'
-import Main from './pages/main'
+import Layout from './template/layout'
 import { BrowserRouter } from 'react-router-dom'
 
 function App() {
   return (
     <div className='App'>
       <BrowserRouter>
-        <Main/>
+        <Layout/>
       </BrowserRouter>
     </div>    
   )
