@@ -1,8 +1,8 @@
-import Content from './content'
 import Header from './header'
 import NavItem from './nav-item'
 import NavBar from './navbar'
+import Title from './title'
 
 export {
-    Content, Header, NavItem, NavBar
+    Header, NavItem, NavBar, Title
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 import './style.css'
-import { Header, NavBar, Content } from '../../components'
+import { Header, NavBar } from '../../components'
 import Router from '../../router'
 
 function Layout() {
@@ -8,9 +8,7 @@ function Layout() {
         <div className='layout'>
             <Header/>           
             <NavBar/>
-            <Content>
-                <Router/>
-            </Content>
+            <Router/>
         </div>
     )
 }
