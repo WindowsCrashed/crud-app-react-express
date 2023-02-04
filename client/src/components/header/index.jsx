@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import './style.css'
-import { Home } from 'react-feather'
 import Logo from '../../assets/svg/gneric-sa-logo.svg'
+import { PageTitleContext } from '../../context/page-title-context-provider'
 
 function Header() {
+    const { pageTitle, pageIcon: PageIcon } = useContext(PageTitleContext)
+
     return (
         <header className='header'>
             <div className='corner'>
@@ -13,8 +15,8 @@ function Header() {
                 </Link>               
             </div>
             <div className='main'>
-                <Home/>
-                <span>Home</span>               
+                <PageIcon/>
+                <span>{ pageTitle }</span>               
             </div>
         </header>
     )

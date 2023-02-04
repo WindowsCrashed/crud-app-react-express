@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import Content from '../../template/content'
 import './style.css'
-import { Table } from '../../components'
+import { Table, Button } from '../../components'
 import useApi from '../../hooks/useApi'
 import mapDataToTableRow from '../../helpers/map-data-to-table-row'
+import { User } from 'react-feather'
 
 function Users() {
     const [data, setData] = useState([])
     const [loaded, setLoaded] = useState(false)
     
     const api = useApi('users')
-    const headers = ['id', 'name', 'email', 'age', 'actions']    
+    const headers = ['Id', 'Name', 'E-mail', 'Age', 'Actions']    
 
     useEffect(() => {
         (async () => {
@@ -24,9 +25,14 @@ function Users() {
     }, [])
 
     return ( 
-        <Content title='Users'>
-            { loaded &&          
-                <Table headers={ headers } data={ data } />
+        <Content title='Users' pageIcon={ User }>
+            { loaded &&
+                <React.Fragment>
+                    <div className='insert-btn-container'>
+                        <Button classes='btn-primary'>Insert a new user</Button> 
+                    </div>                         
+                    <Table headers={ headers } data={ data } />
+                </React.Fragment>
             }        
         </Content>
     )

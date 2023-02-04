@@ -1,10 +1,11 @@
 import React from 'react'
 import Content from '../../template/content'
 import './style.css'
+import { Home as HomeIcon } from 'react-feather'
 
 function Home() {
     return (
-        <Content title='Welcome'>
+        <Content title='Welcome' pageTitle='Home' pageIcon={ HomeIcon }>
             <div className='home'>
                 <p>We are <strong><span className='blue'>G</span>neric</strong>, 
                     the most generic of generic companies in the entire world.</p>
