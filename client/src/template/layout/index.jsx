@@ -1,16 +1,17 @@
 import React from 'react'
 import './style.css'
-import { Header, NavBar, Content } from '../../components'
+import { Header, NavBar } from '../../components'
 import Router from '../../router'
+import PageTitleContextProvider from '../../context/page-title-context-provider'
 
 function Layout() {
     return ( 
         <div className='layout'>
-            <Header/>           
-            <NavBar/>
-            <Content>
+            <PageTitleContextProvider>
+                <Header/>                     
                 <Router/>
-            </Content>
+            </PageTitleContextProvider>          
+            <NavBar/>
         </div>
     )
 }

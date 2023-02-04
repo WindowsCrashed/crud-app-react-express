@@ -1,0 +1,12 @@
+.title {
+    grid-area: title;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.title h1 {
+    font-size: 3.5rem;
+    font-weight: 200;
+    margin: 0px 40px;
+}
