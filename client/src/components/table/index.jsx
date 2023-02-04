@@ -8,11 +8,11 @@ function Table({ headers, data }) {
             <table>
                 <thead>
                     <tr>
-                        { headers.map((header, index) => <th key={ index }>{ header }</th>) }
+                        { headers?.map((header, index) => <th key={ index }>{ header }</th>) }
                     </tr>                    
                 </thead>
                 <tbody>
-                    { data.map((value, index) => <TableRow key={ index } data={ value }/>) }
+                    { data?.map((value, index) => <TableRow key={ index } data={ value }/>) }
                 </tbody>
             </table>
         </div>
