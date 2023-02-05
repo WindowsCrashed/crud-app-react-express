@@ -1,0 +1,23 @@
+.input {
+    width: 500px;
+}
+
+.input label {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    gap: 10px;
+    width: 100%;
+}
+
+.input label input {
+    width: 95.5%;
+    height: 50px;
+    border-radius: 5px;
+    border: solid 1px rgb(184, 184, 184);
+    padding: 0px 10px;
+    font-size: 1.5rem
+}

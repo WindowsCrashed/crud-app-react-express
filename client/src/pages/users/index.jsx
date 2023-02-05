@@ -29,7 +29,9 @@ function Users() {
             { loaded &&
                 <React.Fragment>
                     <div className='insert-btn-container'>
-                        <Button classes='btn-primary'>Insert a new user</Button> 
+                        <Button classes='btn-primary' url='/users/insert'>
+                            Insert a new user
+                        </Button> 
                     </div>                         
                     <Table headers={ headers } data={ data } />
                 </React.Fragment>
