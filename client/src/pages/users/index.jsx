@@ -3,7 +3,7 @@ import Content from '../../template/content'
 import './style.css'
 import { Table, Button } from '../../components'
 import useApi from '../../hooks/useApi'
-import mapDataToTableRow from '../../helpers/map-data-to-table-row'
+import { mapDataToTableRow } from '../../helpers'
 import { User } from 'react-feather'
 
 function Users() {

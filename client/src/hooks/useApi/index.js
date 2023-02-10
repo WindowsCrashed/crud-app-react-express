@@ -31,6 +31,19 @@ export default function useApi(route) {
         }
     }, [])
 
+    const del = useCallback(async () => {
+        cancelToken = axios.CancelToken.source()
+
+        try {
+            await axios.delete(apiRoute, { cancelToken: cancelToken.token })
+            cancelToken = null
+            return true
+        } catch (err) {
+            if (!axios.isCancel(err)) console.log(err)
+            return false
+        }
+    }, [])
+
     const cancelRequest = useCallback(() => {
         cancelToken?.cancel()
     }, [])
@@ -39,5 +52,5 @@ export default function useApi(route) {
         return () => cancelRequest()
     }, [cancelRequest])
 
-    return { get, post, cancelRequest }
+    return { get, post, del, cancelRequest }
 }

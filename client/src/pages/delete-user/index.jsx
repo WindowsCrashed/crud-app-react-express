@@ -5,6 +5,7 @@ import './style.css'
 import { UserFields, HorizontalButtonGroup, ButtonInput, CancelButton } from '../../components'
 import useApi from '../../hooks/useApi'
 import { UserMinus } from 'react-feather'
+import { handleSubmit } from '../../helpers'
 
 function DeleteUser() {
     const [data, setData] = useState({})
@@ -14,11 +15,15 @@ function DeleteUser() {
     const id = useParams().id   
     const api = useApi(`users/${id}`)   
 
+    const deleteUser = async () => {
+        const res = await api.del()
+        if (res) navigate('/users')
+    }
+
     useEffect(() => {
         (async () => {
             const data = await api.get()
             if (!data) return
-            console.log(data)
             setData({
                 name: data.name,
                 email: data.email,
@@ -33,7 +38,7 @@ function DeleteUser() {
             { loaded &&
                 <div className='delete-user'>
                     <p>Are you sure you want to delete the following user?</p>
-                    <form>
+                    <form onSubmit={handleSubmit(deleteUser)}>
                         <UserFields readonly={true} values={ data }/>
                         <HorizontalButtonGroup>
                             <ButtonInput type='submit' value='Delete' classes='btn-danger'/>

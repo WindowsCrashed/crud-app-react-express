@@ -4,6 +4,7 @@ import Content from '../../template/content'
 import { UserPlus } from 'react-feather'
 import { UserFields, HorizontalButtonGroup, ButtonInput, CancelButton } from '../../components'
 import useApi from '../../hooks/useApi'
+import { handleSubmit } from '../../helpers'
 
 function InsertUser() {
     const [name, setName] = useState('')
@@ -18,14 +19,9 @@ function InsertUser() {
         if (res) navigate('/users')
     }
 
-    const handleSubmit = event => {
-        event.preventDefault()
-        saveUser()
-    }
-
     return (
         <Content title='Insert a new user' pageTitle='Insert Users' pageIcon={ UserPlus }>
-            <form className='insert-user-form' onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit(saveUser)}>
                 <UserFields setName={setName} setEmail={setEmail} setAge={setAge}/>
                 <HorizontalButtonGroup>
                     <ButtonInput type='submit' value='Insert' classes='btn-primary'/>
