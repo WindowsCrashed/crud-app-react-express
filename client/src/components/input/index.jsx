@@ -6,8 +6,8 @@ function Input({ label, type, onChange, readonly, value }) {
         <div className='input'>
             <label>
                 { label }
-                <input type={ type ?? 'text' } onChange={onChange}
-                    readOnly={readonly} value={ value }/>
+                <input type={ type ?? 'text' } onChange={ onChange }
+                    readOnly={ readonly } value={ value }/>
             </label>
         </div>
     )

@@ -1,8 +1,8 @@
 import React from 'react'
-import './style.css'
+import PageTitleContextProvider from '../../context/page-title-context-provider'
 import { Header, NavBar } from '../../components'
 import Router from '../../router'
-import PageTitleContextProvider from '../../context/page-title-context-provider'
+import './style.css'
 
 function Layout() {
     return ( 

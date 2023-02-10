@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import Content from '../../template/content'
-import './style.css'
 import { UserFields, HorizontalButtonGroup, ButtonInput, CancelButton } from '../../components'
 import useApi from '../../hooks/useApi'
-import { UserMinus } from 'react-feather'
 import { handleSubmit } from '../../helpers'
+import { UserMinus } from 'react-feather'
+import './style.css'
 
 function DeleteUser() {
     const [data, setData] = useState({})
@@ -38,8 +38,8 @@ function DeleteUser() {
             { loaded &&
                 <div className='delete-user'>
                     <p>Are you sure you want to delete the following user?</p>
-                    <form onSubmit={handleSubmit(deleteUser)}>
-                        <UserFields readonly={true} values={ data }/>
+                    <form onSubmit={ handleSubmit(deleteUser) }>
+                        <UserFields readonly={ true } values={ data }/>
                         <HorizontalButtonGroup>
                             <ButtonInput type='submit' value='Delete' classes='btn-danger'/>
                             <CancelButton returnTo='/users'/>

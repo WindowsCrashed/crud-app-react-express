@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Content from '../../template/content'
-import { UserPlus } from 'react-feather'
 import { UserFields, HorizontalButtonGroup, ButtonInput, CancelButton } from '../../components'
 import useApi from '../../hooks/useApi'
 import { handleSubmit } from '../../helpers'
+import { UserPlus } from 'react-feather'
 
 function InsertUser() {
     const [name, setName] = useState('')
@@ -21,8 +21,8 @@ function InsertUser() {
 
     return (
         <Content title='Insert a new user' pageTitle='Insert Users' pageIcon={ UserPlus }>
-            <form onSubmit={handleSubmit(saveUser)}>
-                <UserFields setName={setName} setEmail={setEmail} setAge={setAge}/>
+            <form onSubmit={ handleSubmit(saveUser) }>
+                <UserFields setters={ { setName, setEmail, setAge } }/>
                 <HorizontalButtonGroup>
                     <ButtonInput type='submit' value='Insert' classes='btn-primary'/>
                     <CancelButton returnTo='/users'/>

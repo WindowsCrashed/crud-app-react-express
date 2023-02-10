@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import Content from '../../template/content'
-import './style.css'
 import { Table, Button } from '../../components'
 import useApi from '../../hooks/useApi'
 import { mapDataToTableRow } from '../../helpers'
 import { User } from 'react-feather'
+import './style.css'
 
 function Users() {
     const [data, setData] = useState([])
