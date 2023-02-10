@@ -7,9 +7,6 @@ function NavBar() {
         <nav className='navbar'>
             <ul>
                 <NavItem label='Users' url='users'/>
-                <NavItem label='Users2' url='users2'/>
-                <NavItem label='Users3' url='users3'/>
-                <NavItem label='Users4' url='users4'/>
             </ul>               
         </nav>
     )

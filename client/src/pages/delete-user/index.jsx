@@ -38,8 +38,8 @@ function DeleteUser() {
             { loaded &&
                 <div className='delete-user'>
                     <p>Are you sure you want to delete the following user?</p>
-                    <form onSubmit={handleSubmit(deleteUser)}>
-                        <UserFields readonly={true} values={ data }/>
+                    <form onSubmit={ handleSubmit(deleteUser) }>
+                        <UserFields readonly={ true } values={ data }/>
                         <HorizontalButtonGroup>
                             <ButtonInput type='submit' value='Delete' classes='btn-danger'/>
                             <CancelButton returnTo='/users'/>

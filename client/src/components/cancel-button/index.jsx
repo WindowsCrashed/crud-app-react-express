@@ -7,7 +7,7 @@ function CancelButton({ returnTo }) {
     const returnToPage = () => navigate(returnTo)
     
     return (
-        <ButtonInput value='Cancel' classes='btn-inverted-secondary' onClick={returnToPage}/>
+        <ButtonInput value='Cancel' classes='btn-inverted-secondary' onClick={ returnToPage }/>
     )
 }
 

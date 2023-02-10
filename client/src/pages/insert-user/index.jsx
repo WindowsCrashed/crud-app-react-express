@@ -21,8 +21,8 @@ function InsertUser() {
 
     return (
         <Content title='Insert a new user' pageTitle='Insert Users' pageIcon={ UserPlus }>
-            <form onSubmit={handleSubmit(saveUser)}>
-                <UserFields setName={setName} setEmail={setEmail} setAge={setAge}/>
+            <form onSubmit={ handleSubmit(saveUser) }>
+                <UserFields setName={ setName } setEmail={ setEmail } setAge={ setAge }/>
                 <HorizontalButtonGroup>
                     <ButtonInput type='submit' value='Insert' classes='btn-primary'/>
                     <CancelButton returnTo='/users'/>
