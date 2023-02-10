@@ -1,6 +1,6 @@
 .user-fields {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    margin-bottom: 65px;
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+	margin-bottom: 65px;
 }

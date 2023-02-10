@@ -7,35 +7,35 @@ import { User } from 'react-feather'
 import './style.css'
 
 function Users() {
-    const [data, setData] = useState([])
-    const [loaded, setLoaded] = useState(false)
-    
-    const api = useApi('users')
-    const headers = ['Id', 'Name', 'E-mail', 'Age', 'Actions']    
+	const [data, setData] = useState([])
+	const [loaded, setLoaded] = useState(false)
 
-    useEffect(() => {
-        (async () => {
-            const data = await api.get()
-            if (!data) return
-            setData(mapDataToTableRow(data))
-            setLoaded(true)                                 
-        })()
-    }, [])
+	const api = useApi('users')
+	const headers = ['Id', 'Name', 'E-mail', 'Age', 'Actions']
 
-    return ( 
-        <Content title='Users' pageIcon={ User }>
-            { loaded &&
-                <React.Fragment>
-                    <div className='insert-btn-container'>
-                        <Button classes='btn-primary' url='/users/insert'>
-                            Insert a new user
-                        </Button> 
-                    </div>                         
-                    <Table headers={ headers } data={ data } />
-                </React.Fragment>
-            }        
-        </Content>
-    )
+	useEffect(() => {
+		;(async () => {
+			const data = await api.get()
+			if (!data) return
+			setData(mapDataToTableRow(data))
+			setLoaded(true)
+		})()
+	}, [])
+
+	return (
+		<Content title='Users' pageIcon={User}>
+			{loaded && (
+				<React.Fragment>
+					<div className='insert-btn-container'>
+						<Button classes='btn-primary' url='/users/insert'>
+							Insert a new user
+						</Button>
+					</div>
+					<Table headers={headers} data={data} />
+				</React.Fragment>
+			)}
+		</Content>
+	)
 }
 
 export default Users

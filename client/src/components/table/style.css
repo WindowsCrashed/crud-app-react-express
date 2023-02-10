@@ -1,48 +1,48 @@
 .table {
-    box-shadow: 2px 2px 7px rgb(159, 158, 158);
-    border-radius: 5px;
+	box-shadow: 2px 2px 7px rgb(159, 158, 158);
+	border-radius: 5px;
 }
 
 .table table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 1.3rem;
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 1.3rem;
 }
 
 .table thead th {
-    color: white;
-    background-color: #246bdc;
+	color: white;
+	background-color: #246bdc;
 }
 
 .table thead th:first-of-type {
-    border-top-left-radius: 5px;   
+	border-top-left-radius: 5px;
 }
 
 .table thead th:last-of-type {
-    border-top-right-radius: 5px;   
+	border-top-right-radius: 5px;
 }
 
 .table tbody tr:last-of-type td:first-of-type {
-    border-bottom-left-radius: 5px;  
+	border-bottom-left-radius: 5px;
 }
 
 .table tbody tr:last-of-type td:last-of-type {
-    border-bottom-right-radius: 5px;  
+	border-bottom-right-radius: 5px;
 }
 
 .table th {
-    text-align: left;
-    padding: 15px 20px;
+	text-align: left;
+	padding: 15px 20px;
 }
 
 .table td {
-    padding: 15px 20px;
+	padding: 15px 20px;
 }
 
 .table tr:not(tr:last-of-type) {
-    border-bottom: solid 2px rgb(237, 237, 237);
+	border-bottom: solid 2px rgb(237, 237, 237);
 }
 
 .table tbody tr:hover {
-    box-shadow: inset 0px 0px 100px 100px rgba(220, 220, 220, 0.2);
+	box-shadow: inset 0px 0px 100px 100px rgba(220, 220, 220, 0.2);
 }
