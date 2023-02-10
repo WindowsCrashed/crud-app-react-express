@@ -1,14 +1,14 @@
 .content {
-	grid-area: content;
-	margin: 30px;
-	border-radius: 5px;
-	box-shadow: 2px 2px 7px rgb(159, 158, 158);
-	display: grid;
-	grid-template-rows: 140px 1fr;
-	grid-template-areas: 'title' 'content-body';
+    grid-area: content;
+    margin: 30px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 7px rgb(159, 158, 158);
+    display: grid;
+    grid-template-rows: 140px 1fr;
+    grid-template-areas: 'title' 'content-body';
 }
 
 .content .content-body {
-	grid-area: content-body;
-	margin: 40px;
+    grid-area: content-body;
+    margin: 40px;
 }

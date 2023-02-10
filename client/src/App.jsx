@@ -3,13 +3,13 @@ import Layout from './template/layout'
 import './App.css'
 
 function App() {
-	return (
-		<div className='App'>
-			<BrowserRouter>
-				<Layout />
-			</BrowserRouter>
-		</div>
-	)
+    return (
+        <div className='App'>
+            <BrowserRouter>
+                <Layout />
+            </BrowserRouter>
+        </div>
+    )
 }
 
 export default App

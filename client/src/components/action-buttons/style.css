@@ -1,9 +1,9 @@
 .action-btns {
-	display: flex;
-	align-items: center;
-	gap: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
 .action-btns .btn {
-	padding: 12px;
+    padding: 12px;
 }
