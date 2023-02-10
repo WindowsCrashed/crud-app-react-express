@@ -44,6 +44,10 @@ body {
   box-shadow: inset 0px 0px 100px 0px rgba(0, 0, 0, 0.2);
 }
 
+.btn-input {
+  border: none;
+}
+
 .btn-primary {
   background-color: #317af0;
   color: white;
@@ -65,3 +69,4 @@ body {
   background: none;
   padding: 13px !important;
 }
+

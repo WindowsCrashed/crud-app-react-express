@@ -1,0 +1,9 @@
+.horizontal-btn-group {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.horizontal-btn-group input {
+    font-size: 1.3rem;
+}
