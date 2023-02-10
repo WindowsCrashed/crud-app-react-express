@@ -1,6 +1,6 @@
 import React from 'react'
-import './style.css'
 import NavItem from '../nav-item'
+import './style.css'
 
 function NavBar() {
     return (

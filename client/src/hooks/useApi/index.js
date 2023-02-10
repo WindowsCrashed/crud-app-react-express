@@ -1,5 +1,5 @@
-import axios from 'axios'
 import { useEffect, useCallback } from 'react'
+import axios from 'axios'
 
 export default function useApi(route) {
     const apiRoute = `http://localhost:3001/${route}`

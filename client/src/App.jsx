@@ -1,6 +1,6 @@
-import './App.css'
-import Layout from './template/layout'
 import { BrowserRouter } from 'react-router-dom'
+import Layout from './template/layout'
+import './App.css'
 
 function App() {
   return (

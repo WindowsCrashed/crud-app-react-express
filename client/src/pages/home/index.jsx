@@ -1,7 +1,7 @@
 import React from 'react'
 import Content from '../../template/content'
-import './style.css'
 import { Home as HomeIcon } from 'react-feather'
+import './style.css'
 
 function Home() {
     return (

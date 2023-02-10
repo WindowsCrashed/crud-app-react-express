@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import useApi from '../../hooks/useApi'
 import Content from '../../template/content'
-import { Edit } from 'react-feather'
 import { UserFields, HorizontalButtonGroup, ButtonInput, CancelButton } from '../../components'
+import useApi from '../../hooks/useApi'
 import { handleSubmit } from '../../helpers'
+import { Edit } from 'react-feather'
 
 function EditUser() {
     const [name, setName] = useState('')

@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import Content from '../../template/content'
-import './style.css'
 import { UserFields, HorizontalButtonGroup, ButtonInput, CancelButton } from '../../components'
 import useApi from '../../hooks/useApi'
-import { UserMinus } from 'react-feather'
 import { handleSubmit } from '../../helpers'
+import { UserMinus } from 'react-feather'
+import './style.css'
 
 function DeleteUser() {
     const [data, setData] = useState({})
