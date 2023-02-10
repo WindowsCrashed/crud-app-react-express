@@ -1,10 +1,11 @@
 import axios from 'axios'
+import { useEffect, useCallback } from 'react'
 
 export default function useApi(route) {
     const apiRoute = `http://localhost:3001/${route}`
     let cancelToken = null
 
-    const get = async () => {
+    const get = useCallback(async () => {
         cancelToken = axios.CancelToken.source()       
 
         try {
@@ -15,9 +16,9 @@ export default function useApi(route) {
             if (axios.isCancel(err)) return
             console.log(err)
         }       
-    }
+    }, [])
 
-    const post = async (obj) => {
+    const post = useCallback(async (obj) => {
         cancelToken = axios.CancelToken.source()
 
         try {
@@ -28,11 +29,28 @@ export default function useApi(route) {
             if (!axios.isCancel(err)) console.log(err)
             return false
         }
-    }
+    }, [])
 
-    const cancelRequest = () => {
+    const del = useCallback(async () => {
+        cancelToken = axios.CancelToken.source()
+
+        try {
+            await axios.delete(apiRoute, { cancelToken: cancelToken.token })
+            cancelToken = null
+            return true
+        } catch (err) {
+            if (!axios.isCancel(err)) console.log(err)
+            return false
+        }
+    }, [])
+
+    const cancelRequest = useCallback(() => {
         cancelToken?.cancel()
-    }
+    }, [])
 
-    return { get, post, cancelRequest }
+    useEffect(() => {
+        return () => cancelRequest()
+    }, [cancelRequest])
+
+    return { get, post, del, cancelRequest }
 }

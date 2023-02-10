@@ -1,17 +1,13 @@
 import React from 'react'
-import Button from '../button'
+import DeleteButton from '../delete-button'
+import EditButton from '../edit-button'
 import './style.css'
-import { Edit, Trash2 } from 'react-feather'
 
-function ActionButtons() {
+function ActionButtons({ id }) {
     return ( 
         <div className='action-btns'>
-            <Button classes='btn-warning'>
-                <Edit size={21}/>
-            </Button>
-            <Button classes='btn-danger'>
-                <Trash2 size={21}/>
-            </Button>
+            <EditButton id={ id }/>
+            <DeleteButton id ={ id }/>
         </div>
     )
 }

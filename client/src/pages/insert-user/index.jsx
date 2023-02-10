@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import './style.css'
 import Content from '../../template/content'
 import { UserPlus } from 'react-feather'
-import { Input } from '../../components'
+import { UserFields, HorizontalButtonGroup, ButtonInput, CancelButton } from '../../components'
 import useApi from '../../hooks/useApi'
+import { handleSubmit } from '../../helpers'
 
 function InsertUser() {
     const [name, setName] = useState('')
@@ -16,35 +16,17 @@ function InsertUser() {
 
     const saveUser = async () => {
         const res = await api.post({ name, email, age })
-        if (res) returnToUsers()
+        if (res) navigate('/users')
     }
-
-    const handleSubmit = event => {
-        event.preventDefault()
-        saveUser()
-    }
-
-    const returnToUsers = () => navigate('/users')
-    
-    useEffect(() => {
-        return () => { 
-            api.cancelRequest() 
-        }
-    }, [api])
 
     return (
         <Content title='Insert a new user' pageTitle='Insert Users' pageIcon={ UserPlus }>
-            <form className='insert-user-form' onSubmit={handleSubmit}>
-                <div className='input-group'>
-                    <Input label='Name' onChange={e => setName(e.target.value)}/>
-                    <Input label='E-mail' type='email' onChange={e => setEmail(e.target.value)}/>
-                    <Input label='Age' type='number' onChange={e => setAge(e.target.value)}/>
-                </div>
-                <div className='btn-group'>
-                    <input type="submit" value="Insert" className='btn btn-primary'/>
-                    <input type="button" value="Cancel" className='btn btn-inverted-secondary'
-                        onClick={returnToUsers}/>
-                </div>
+            <form onSubmit={handleSubmit(saveUser)}>
+                <UserFields setName={setName} setEmail={setEmail} setAge={setAge}/>
+                <HorizontalButtonGroup>
+                    <ButtonInput type='submit' value='Insert' classes='btn-primary'/>
+                    <CancelButton returnTo='/users'/>
+                </HorizontalButtonGroup>
             </form>     
         </Content>
     )
