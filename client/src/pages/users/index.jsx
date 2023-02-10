@@ -20,8 +20,6 @@ function Users() {
             setData(mapDataToTableRow(data))
             setLoaded(true)                                 
         })()
-
-        return () => api.cancelRequest()
     }, [])
 
     return ( 

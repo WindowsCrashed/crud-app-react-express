@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import './style.css'
 import Content from '../../template/content'
@@ -25,12 +25,6 @@ function InsertUser() {
     }
 
     const returnToUsers = () => navigate('/users')
-    
-    useEffect(() => {
-        return () => { 
-            api.cancelRequest() 
-        }
-    }, [api])
 
     return (
         <Content title='Insert a new user' pageTitle='Insert Users' pageIcon={ UserPlus }>
